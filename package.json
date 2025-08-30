@@ -5,8 +5,7 @@
   "main": "src/main.js",
   "type": "commonjs",
   "scripts": {
-    "start": "node src/main.js",
-    "dev": "npx apify run -p --input=dev-input.json"
+    "start": "node src/main.js"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.45.4",

@@ -2,7 +2,7 @@
   "actorSpecification": 1,
   "name": "amazon-core-actor",
   "title": "Amazon Core Scraper (EU/UK)",
-  "description": "Scrape Amazon sellers and products into Supabase, queue sellers for enrichment.",
+  "description": "Scrape Amazon sellers/products into Supabase and queue sellers for enrichment.",
   "version": "1.0",
   "buildTag": "latest",
   "environmentVariables": [
