@@ -1,0 +1,12 @@
+{
+  "actorSpecification": 1,
+  "name": "amazon-core-actor",
+  "title": "Amazon Core Scraper (EU/UK)",
+  "description": "Scrape Amazon sellers and products into Supabase, queue sellers for enrichment.",
+  "version": "1.0",
+  "buildTag": "latest",
+  "environmentVariables": [
+    { "name": "SUPABASE_URL", "value": "set-in-apify-ui" },
+    { "name": "SUPABASE_SERVICE_ROLE_KEY", "value": "set-in-apify-ui" }
+  ]
+}

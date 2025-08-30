@@ -1,0 +1,22 @@
+{
+  "name": "amazon-core-actor",
+  "version": "1.0.0",
+  "description": "Amazon EU/UK seller and product scraper -> Supabase enrichment queue",
+  "main": "src/main.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node src/main.js",
+    "dev": "npx apify run -p --input=dev-input.json"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.45.4",
+    "apify": "^3.2.1",
+    "crawlee": "^3.9.3",
+    "dotenv": "^16.4.5",
+    "puppeteer-extra": "^3.3.6",
+    "puppeteer-extra-plugin-stealth": "^2.12.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

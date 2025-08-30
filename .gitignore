@@ -1,0 +1,14 @@
+# Node
+node_modules/
+npm-debug.log
+package-lock.json
+
+# Apify local storage (for local runs only)
+storage/
+key_value_stores/
+datasets/
+request_queues/
+
+# Environment
+.env
+.env.local

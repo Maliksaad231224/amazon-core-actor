@@ -1,0 +1,48 @@
+{
+  "title": "Amazon EU/UK Core Scraper",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "domains": {
+      "title": "Amazon domains",
+      "type": "array",
+      "description": "Which marketplaces to crawl.",
+      "prefill": ["amazon.co.uk", "amazon.de", "amazon.fr", "amazon.it", "amazon.es", "amazon.nl"],
+      "items": { "type": "string" }
+    },
+    "categories": {
+      "title": "Category paths or keywords",
+      "type": "array",
+      "description": "Optional: pass category paths or search queries. If empty, the actor seeds from Bestsellers/Deals.",
+      "items": { "type": "string" }
+    },
+    "maxItems": {
+      "title": "Max listings to process",
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 5000,
+      "prefill": 1000
+    },
+    "maxConcurrency": {
+      "title": "Max concurrency",
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 20,
+      "prefill": 5
+    },
+    "proxy": {
+      "title": "Proxy configuration",
+      "type": "object",
+      "description": "Use Apify Residential proxies for best results.",
+      "properties": {
+        "useApifyProxy": { "type": "boolean", "prefill": true },
+        "apifyProxyGroups": {
+          "type": "array",
+          "items": { "type": "string" },
+          "prefill": ["RESIDENTIAL"]
+        }
+      }
+    }
+  },
+  "required": ["domains"]
+}
