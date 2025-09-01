@@ -1,19 +1,23 @@
-# Use official Apify Node image (Node 18)
+# Use the Apify image that includes Node.js 20 + Chrome
 FROM apify/actor-node-puppeteer-chrome:20
 
-
-# Create app dir
+# Set working directory
 WORKDIR /usr/src/app
 
-# Install deps first (better layer caching)
-COPY package.json ./
-RUN npm install --only=production
+# Copy package files
+COPY package.json package-lock.json ./
 
-# Copy the rest
+# Fix permissions for the app directory (CRITICAL STEP)
+RUN chown -R myuser:myuser /usr/src/app
+
+# Install production dependencies as the correct user
+RUN npm install --omit=dev
+
+# Copy the rest of your application code
 COPY . ./
 
-# (Optional) Show versions in build logs
-RUN node -v && npm -v
+# (Optional) Verify versions
+RUN echo "Node version: $(node -v)" && echo "NPM version: $(npm -v)"
 
-# Start
+# Start the application
 CMD ["node", "src/main.js"]
