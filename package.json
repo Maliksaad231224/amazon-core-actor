@@ -13,7 +13,7 @@
     "crawlee": "^3.9.3",
     "dotenv": "^16.4.5",
     "puppeteer-extra": "^3.3.6",
-    "puppeteer-extra-plugin-stealth": "2.12.3" 
+    "puppeteer-extra-plugin-stealth": "2.11.2" 
   },
   "engines": {
     "node": ">=18"
