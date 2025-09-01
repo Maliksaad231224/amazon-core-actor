@@ -4,17 +4,23 @@ FROM apify/actor-node-puppeteer-chrome:20
 # Set working directory
 WORKDIR /usr/src/app
 
+# First, ensure root owns the directory for installation
+USER root
+
 # Copy package.json
 COPY package.json ./
 
-# 1. FIRST install dependencies as ROOT (has permissions to create node_modules)
+# Fix permissions for the app directory
+RUN chown -R myuser:myuser /usr/src/app
+
+# Switch back to myuser for npm install
+USER myuser
+
+# Install production dependencies
 RUN npm install --omit=dev
 
-# 2. THEN copy the rest of your application code
-COPY . ./
-
-# 3. FINALLY switch to the non-root user for security when running the app
-USER myuser
+# Copy the rest of your application code
+COPY --chown=myuser:myuser . ./
 
 # Start the application
 CMD ["node", "src/main.js"]
