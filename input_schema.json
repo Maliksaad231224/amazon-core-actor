@@ -8,6 +8,7 @@
       "type": "array",
       "items": { "type": "string" },
       "prefill": ["amazon.co.uk"],
+      "editor": "stringList",
       "description": "List of Amazon domain URLs to scrape (e.g., amazon.com, amazon.co.uk). Include the full domain."
     }
   },
