@@ -12,6 +12,7 @@
     "apify": "^3.2.1",
     "crawlee": "^3.9.3",
     "dotenv": "^16.4.5",
+    "puppeteer":"24.18.0"
     "puppeteer-extra": "^3.3.6",
     "puppeteer-extra-plugin-stealth": "2.11.2" 
   },
