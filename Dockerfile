@@ -1,5 +1,5 @@
 # Use official Apify Node image (Node 18)
-FROM apify/actor-node:18
+FROM apify/actor-node:20
 
 # Create app dir
 WORKDIR /usr/src/app
