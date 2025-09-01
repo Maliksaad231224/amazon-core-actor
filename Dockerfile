@@ -1,5 +1,6 @@
 # Use official Apify Node image (Node 18)
-FROM apify/actor-node:20
+FROM apify/actor-node-puppeteer-chrome:20
+
 
 # Create app dir
 WORKDIR /usr/src/app
