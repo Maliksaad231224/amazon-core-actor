@@ -7,10 +7,10 @@ WORKDIR /usr/src/app
 # Copy package.json
 COPY package.json ./
 
-# Ensure we're using the correct user (myuser is the default in Apify images)
+# Switch to the non-root user FIRST (before npm install)
 USER myuser
 
-# Install production dependencies
+# Install production dependencies (now as myuser)
 RUN npm install --omit=dev
 
 # Copy the rest of your application code
