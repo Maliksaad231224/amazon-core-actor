@@ -7,7 +7,8 @@
       "title": "Amazon domains",
       "type": "array",
       "items": { "type": "string" },
-      "prefill": ["amazon.co.uk"]
+      "prefill": ["amazon.co.uk"],
+      "description": "List of Amazon domain URLs to scrape (e.g., amazon.com, amazon.co.uk). Include the full domain."
     }
   },
   "required": ["domains"]
