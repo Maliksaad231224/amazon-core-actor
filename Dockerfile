@@ -5,7 +5,7 @@ FROM apify/actor-node-puppeteer-chrome:20
 WORKDIR /usr/src/app
 
 # Copy package files
-COPY package.json package-lock.json ./
+COPY package.json ./
 
 # Fix permissions for the app directory (CRITICAL STEP)
 RUN chown -R myuser:myuser /usr/src/app
